@@ -62,6 +62,7 @@ public class HelloController {
 	public @ResponseBody UserModel welcomeJson(@RequestParam Map<String, String> params, ModelMap model) {
 		UserModel userModel = new UserModel();
 		userModel.name = params.get("name");
+		userModel.age = params.get("age");
 		return userModel;
 	}
 }
