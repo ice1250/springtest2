@@ -63,6 +63,8 @@ public class HelloController {
 		UserModel userModel = new UserModel();
 		userModel.name = params.get("name");
 		userModel.age = params.get("age");
+		
+		
 		return userModel;
 	}
 }
