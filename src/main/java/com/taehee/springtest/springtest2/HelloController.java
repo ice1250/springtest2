@@ -65,7 +65,7 @@ public class HelloController {
 		userModel.age = params.get("age");
 		//어려움..
 		//이제 쉬워져야할텐데...
-		
+		//test1
 		return userModel;
 	}
 }
