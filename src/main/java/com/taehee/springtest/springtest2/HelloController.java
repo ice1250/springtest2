@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.taehee.springtest.model.LoginModel;
 import com.taehee.springtest.model.UserModel;
+import com.taehee.springtest.mybatis.UserDaoImpl;
 
 @Controller
 @RequestMapping("/")
@@ -68,4 +70,17 @@ public class HelloController {
 		//test1
 		return userModel;
 	}
+	
+	@RequestMapping(value = "/loginJson", method = RequestMethod.GET)
+	public @ResponseBody LoginModel loginJson(@RequestParam Map<String, String> params, ModelMap model) {
+		LoginModel loginModel = new LoginModel();
+		UserDaoImpl userDaoImpl = new UserDaoImpl();
+		if (userDaoImpl.getLoginResult(params) == 1) {
+			loginModel.result = "로그인 성공";
+		} else {
+			loginModel.result = "로그인 실패";
+		}
+		return loginModel;
+	}
+	
 }

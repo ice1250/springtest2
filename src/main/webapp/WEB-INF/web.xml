@@ -28,6 +28,7 @@
 		<param-value>
 			classpath:/spring/applicationContext.xml
 			classpath:/spring/spring-servlet.xml
+			classpath:/mybatis/mybatis-context.xml
 		</param-value>
 	</context-param>
 
